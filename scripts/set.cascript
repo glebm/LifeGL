@@ -1,0 +1,9 @@
+function ds_over_dt(i, j: integer): double;
+var d: double;
+begin
+     d := density(i, j, 1);
+     if (round(d * 10) mod 2 = 1) then
+        result := 1
+     else 
+        result := -1;
+end;

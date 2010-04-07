@@ -1,0 +1,7 @@
+function ds_over_dt(i, j: integer): double;
+var d, s: double;
+begin
+     s := GetCell(i, j);
+     d := density(i, j, 1);
+     result := (d - s);
+end;

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namespace name="CFunctions">
+  <function name="isalnum" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="isalpha" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="iscntrl" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="isdigit" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="isgraph" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="islower" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="isprint" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="ispunct" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="isspace" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="isupper" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="isxdigit" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="toupper" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Char" />
+    </parameters>
+  </function>
+  <function name="tolower" visibility="public">
+    <parameters>
+      <parameter name="ch" type="Char" />
+      <retval type="Char" />
+    </parameters>
+  </function>
+  <function name="sscanf" visibility="public">
+    <parameters>
+      <parameter name="Data" type="string" />
+      <parameter name="Format" type="string" />
+      <parameter name="Args" paramflags="const">
+        <array name="Args">
+          <element type="TVarRec" />
+        </array>
+      </parameter>
+      <retval type="Integer" />
+    </parameters>
+  </function>
+</namespace>

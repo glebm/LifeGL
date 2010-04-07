@@ -1,0 +1,4 @@
+function ds_over_dt(i, j: integer): extended;
+begin
+  result := 4/8 - density(i, j, 1);
+end;

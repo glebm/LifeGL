@@ -1,0 +1,14 @@
+// прикольно в мире b1357/s1357 (мир-репликатор #1), Bounds = Linked
+function sincos(x, y: extended): boolean;
+var ty: extended;
+begin
+   x := x * 6 * pi; // [0, 1] -> [0, 6 * pi]
+   y := y - 0.2; // вверх на пятую часть поля
+   ty := (-0.8 -(2 * y - 1)); // симметрия y со сдвигом на 4/5 поля
+   y := 2 * y - 1; // [0, 1] -> [-1, 1]
+   result := (y <= 0.1 * sin(x)) and (ty <= 0.1 * cos(x));
+end;
+
+begin
+  fill('sincos');
+end.

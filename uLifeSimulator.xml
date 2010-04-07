@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namespace name="uLifeSimulator">
+  <const name="ACCURACY" type="Int64">
+    <value>
+      $174876E800
+    </value>
+  </const>
+  <array name="TDoubleMatrix">
+    <element type=".1" />
+  </array>
+  <const name="btDead" type="TBoundsType">
+    <value>
+      btDead
+    </value>
+  </const>
+  <const name="btAlive" type="TBoundsType">
+    <value>
+      btAlive
+    </value>
+  </const>
+  <const name="btLinked" type="TBoundsType">
+    <value>
+      btLinked
+    </value>
+  </const>
+  <enum name="TBoundsType">
+    <element name="btDead" />
+    <element name="btAlive" />
+    <element name="btLinked" />
+  </enum>
+  <const name="ntMoore" type="TNeighbourhoodType">
+    <value>
+      ntMoore
+    </value>
+  </const>
+  <const name="ntVonNeumann" type="TNeighbourhoodType">
+    <value>
+      ntVonNeumann
+    </value>
+  </const>
+  <enum name="TNeighbourhoodType">
+    <element name="ntMoore" />
+    <element name="ntVonNeumann" />
+  </enum>
+  <class name="TLifeSimulator">
+    <ancestor name="TObject" namespace="System">
+      <methodref name="Create" visibility="public">
+      </methodref>
+      <methodref name="Free" visibility="public">
+      </methodref>
+      <methodref name="InitInstance" visibility="public">
+      </methodref>
+      <methodref name="CleanupInstance" visibility="public">
+      </methodref>
+      <methodref name="ClassType" visibility="public">
+      </methodref>
+      <methodref name="ClassName" visibility="public">
+      </methodref>
+      <methodref name="ClassNameIs" visibility="public">
+      </methodref>
+      <methodref name="ClassParent" visibility="public">
+      </methodref>
+      <methodref name="ClassInfo" visibility="public">
+      </methodref>
+      <methodref name="InstanceSize" visibility="public">
+      </methodref>
+      <methodref name="InheritsFrom" visibility="public">
+      </methodref>
+      <methodref name="MethodAddress" visibility="public">
+      </methodref>
+      <methodref name="MethodName" visibility="public">
+      </methodref>
+      <methodref name="FieldAddress" visibility="public">
+      </methodref>
+      <methodref name="GetInterface" visibility="public">
+      </methodref>
+      <methodref name="GetInterfaceEntry" visibility="public">
+      </methodref>
+      <methodref name="GetInterfaceTable" visibility="public">
+      </methodref>
+      <methodref name="SafeCallException" visibility="public">
+      </methodref>
+      <methodref name="AfterConstruction" visibility="public">
+      </methodref>
+      <methodref name="BeforeDestruction" visibility="public">
+      </methodref>
+      <methodref name="Dispatch" visibility="public">
+      </methodref>
+      <methodref name="DefaultHandler" visibility="public">
+      </methodref>
+      <methodref name="NewInstance" visibility="public">
+      </methodref>
+      <methodref name="FreeInstance" visibility="public">
+      </methodref>
+      <methodref name="Destroy" visibility="public">
+      </methodref>
+    </ancestor>
+    <members>
+      <field name="FBoundsType" type="TBoundsType" visibility="private" />
+      <field name="fw" type="Integer" visibility="private" />
+      <field name="fh" type="Integer" visibility="private" />
+      <field name="flvalue" type="Double" visibility="private" />
+      <field name="frvalue" type="Double" visibility="private" />
+      <field name="ff" type="TDoubleMatrix" visibility="private" />
+      <field name="buff" type="TDoubleMatrix" visibility="private" />
+      <field name="FGetCellState" visibility="private">
+      </field>
+      <procedure name="SetCellState" visibility="private">
+        <parameters>
+          <parameter name="x" type="Integer" />
+          <parameter name="y" type="Integer" />
+          <parameter name="Value" type="Double" />
+        </parameters>
+      </procedure>
+      <procedure name="SetBoundsType" visibility="private">
+        <parameters>
+          <parameter name="Value" type="TBoundsType" paramflags="const" />
+        </parameters>
+      </procedure>
+      <procedure name="SetWidth" visibility="private">
+        <parameters>
+          <parameter name="Value" type="Integer" paramflags="const" />
+        </parameters>
+      </procedure>
+      <procedure name="SetHeight" visibility="private">
+        <parameters>
+          <parameter name="Value" type="Integer" paramflags="const" />
+        </parameters>
+      </procedure>
+      <procedure name="SetLValue" visibility="private">
+        <parameters>
+          <parameter name="Value" type="Double" paramflags="const" />
+        </parameters>
+      </procedure>
+      <procedure name="SetRValue" visibility="private">
+        <parameters>
+          <parameter name="Value" type="Double" paramflags="const" />
+        </parameters>
+      </procedure>
+      <function name="GetCellState" visibility="private">
+        <parameters>
+          <parameter name="x" type="Integer" />
+          <parameter name="y" type="Integer" />
+          <retval type="Double" />
+        </parameters>
+      </function>
+      <function name="GetCellState_BT_0_1" visibility="private">
+        <parameters>
+          <parameter name="x" type="Integer" />
+          <parameter name="y" type="Integer" />
+          <retval type="Double" />
+        </parameters>
+      </function>
+      <function name="GetCellState_BT_2" visibility="private">
+        <parameters>
+          <parameter name="x" type="Integer" />
+          <parameter name="y" type="Integer" />
+          <retval type="Double" />
+        </parameters>
+      </function>
+      <property name="f" visibility="public" read="GetCellState" write="SetCellState" type="Double" />
+      <property name="w" visibility="public" read="fw" write="SetWidth" type="Integer" />
+      <property name="h" visibility="public" read="fh" write="SetHeight" type="Integer" />
+      <property name="lvalue" visibility="public" read="flvalue" write="SetLValue" type="Double" />
+      <property name="rvalue" visibility="public" read="frvalue" write="SetRValue" type="Double" />
+      <property name="boundsType" visibility="public" read="FBoundsType" write="SetBoundsType" type="TBoundsType" />
+      <function name="neighbours" visibility="public" procflags="overload">
+        <parameters>
+          <parameter name="x" type="Integer" paramflags="const" />
+          <parameter name="y" type="Integer" paramflags="const" />
+          <parameter name="r" type="Integer" paramflags="const" />
+          <parameter name="neighbourhood" type="TNeighbourhoodType" />
+          <retval type="Double" />
+        </parameters>
+      </function>
+      <procedure name="SwapBuffers" visibility="public">
+      </procedure>
+      <procedure name="SetCellDirect" visibility="public">
+        <parameters>
+          <parameter name="x" type="Integer" />
+          <parameter name="y" type="Integer" />
+          <parameter name="state" type="Double" />
+        </parameters>
+      </procedure>
+      <constructor name="Create" visibility="public">
+        <parameters>
+          <parameter name="w" type="Integer" paramflags="const" />
+          <parameter name="h" type="Integer" paramflags="const" />
+        </parameters>
+      </constructor>
+      <constructor name="Create" visibility="public">
+        <parameters>
+          <parameter name="w" type="Integer" paramflags="const" />
+          <parameter name="h" type="Integer" paramflags="const" />
+          <parameter name="lvalue" type="Double" paramflags="const" />
+          <parameter name="rvalue" type="Double" paramflags="const" />
+        </parameters>
+      </constructor>
+    </members>
+  </class>
+</namespace>

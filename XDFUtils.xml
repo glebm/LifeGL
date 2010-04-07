@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namespace name="xdfUtils">
+  <set name="TCharSet" type="Char" />
+  <function name="BoolToStr" visibility="public">
+    <parameters>
+      <parameter name="Condition" type="Boolean" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <procedure name="CreateSet" visibility="public">
+    <parameters>
+      <parameter name="Source" type="string" />
+      <parameter name="ResultSet" type="TCharSet" paramflags="var" />
+    </parameters>
+  </procedure>
+  <function name="ifOp" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="Condition" type="Boolean" />
+      <parameter name="IfTrue" type="Integer" />
+      <parameter name="IfFalse" type="Integer" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+  <function name="ifOp" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="Condition" type="Boolean" />
+      <parameter name="IfTrue" type="Int64" />
+      <parameter name="IfFalse" type="Int64" />
+      <retval type="Int64" />
+    </parameters>
+  </function>
+  <function name="ifOp" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="Condition" type="Boolean" />
+      <parameter name="IfTrue" type="Boolean" />
+      <parameter name="IfFalse" type="Boolean" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="ifOp" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="Condition" type="Boolean" />
+      <parameter name="IfTrue" type="string" />
+      <parameter name="IfFalse" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="ifOp" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="Condition" type="Boolean" />
+      <parameter name="IfTrue" type="Extended" />
+      <parameter name="IfFalse" type="Extended" />
+      <retval type="Extended" />
+    </parameters>
+  </function>
+  <function name="ifOp" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="Condition" type="Boolean" />
+      <parameter name="IfTrue" type="TObject" />
+      <parameter name="IfFalse" type="TObject" />
+      <retval type="TObject" />
+    </parameters>
+  </function>
+  <function name="InStringList" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" paramflags="const" />
+      <parameter name="Args" paramflags="const">
+        <array name="Args">
+          <element type="string" />
+        </array>
+      </parameter>
+      <parameter name="CaseInsensitive" type="Boolean">
+        <value>
+          False
+        </value>
+      </parameter>
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="StrToBool" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" paramflags="const" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="StrToBoolDef" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" paramflags="const" />
+      <parameter name="Default" type="Boolean" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+</namespace>

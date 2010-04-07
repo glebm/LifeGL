@@ -1,0 +1,6 @@
+function ds_over_dt(i, j: integer): extended;
+var d: extended;
+begin
+  d := density(i, j, 1);
+  result := -10*(d - 2.0/8)*(d - 5.0/8);
+end;

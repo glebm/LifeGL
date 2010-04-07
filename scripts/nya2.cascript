@@ -1,0 +1,7 @@
+function ds_over_dt(i, j: integer): double;
+var d, s: double;
+begin
+     s := getcell(i,j);
+     d := density(i, j, 1);
+     result :=  10*(d - 0.9)*sin(3*(s - d)) * cos(3*(s + d)) ;
+end;

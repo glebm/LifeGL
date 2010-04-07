@@ -1,0 +1,11 @@
+// state
+function state1(x, y: extended): extended;
+begin
+   x := x - 0.5;
+   y := y - 0.5;
+   result := abs(x * sin(1/x) + y * sin(1/y) - 0.3 * 0.3);
+end;
+
+begin
+  fill('state1');
+end.

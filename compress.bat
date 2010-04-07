@@ -1,0 +1,1 @@
+upx LifeGL.exe --best
