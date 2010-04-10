@@ -5,7 +5,7 @@ interface
 uses
   SysUtils,xdfUtils;
 
-// Decimal Separator update by Glex, 2008
+// Decimal Separator update by Gleb Mazovetskiy, 2007
 // (C) Clinton R. Johnson January 27, 1999.
 //
 // see accompanying readme.txt for terms and conditions of use.
